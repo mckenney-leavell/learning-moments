@@ -18,19 +18,19 @@ export const AllPosts = () => {
     }, [])
 
     useEffect(() => {
-        if (getSelectedTopic.length > 0) {
-            const topicSelected = allPosts.filter((topicOption) => topicOption.topic.id === getSelectedTopic)
+        if (Number.isInteger(parseInt(getSelectedTopic))) {
+            const topicSelected = allPosts.filter((post) => post.topic.id === parseInt(getSelectedTopic))
             setFilteredPosts(topicSelected)
         } else {
             setFilteredPosts(allPosts)
         }
-    }, [showFilteredPosts, allPosts, getSelectedTopic])
+    }, [allPosts, getSelectedTopic])
     
     return (
         <div >
             <DropDown setShowFilteredTopic={setSelectedTopic}/>
             <div className="allPosts">
-            {allPosts.map((post) =>         
+            {showFilteredPosts.map((post) =>         
                 <div key={post.id} className="card">
                     <h2>{post.title}</h2>
                     <h3>{post.topic.name}</h3>

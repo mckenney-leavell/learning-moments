@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+// import bootstrap from 'bootstrap'
 // import { getAllPosts } from "../services/AllPostsService"
 
 export const DropDown = ( { setShowFilteredTopic } ) => {
@@ -24,7 +25,7 @@ export const DropDown = ( { setShowFilteredTopic } ) => {
     return (
         <div className="dropdown">
         <select id="topics-dropdown" className="dropdown-content" onChange={(event) => {setShowFilteredTopic(event.target.value)}}> 
-            <option>Filter by topic</option>
+            <option className="topic-option">Filter by topic</option>
             {allTopics.map((topic) => 
                 <option value={topic.id} key={topic.id} className="topic-option">{topic.name}</option>
             )}
