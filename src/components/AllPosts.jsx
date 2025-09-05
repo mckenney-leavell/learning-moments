@@ -3,7 +3,7 @@ import { getAllPosts } from "../services/AllPostsService";
 import { useState, useEffect } from "react";
 import { DropDown } from "./DropDown";
 import { SearchBar } from "./SearchBar";
-
+import { Link } from "react-router-dom";
 
 export const AllPosts = () => {
     const [allPosts, setAllPosts] = useState([])
@@ -30,22 +30,22 @@ export const AllPosts = () => {
             setFilteredPosts(allPosts)
         }
     }, [allPosts, getSelectedTopic, getSearchInput])
-
-    useEffect(() => {
-        
-    }, [getSearchInput, allPosts])
     
     return (
-        <div >
+        <div>
             <SearchBar setSearchInput={setSearchInput} getSearchInput={getSearchInput} />
             <DropDown setShowFilteredTopic={setSelectedTopic} />
             <div className="allPosts">
-            {showFilteredPosts.map((post) =>         
+            {showFilteredPosts.map((post) =>
+            <>       
                 <div key={post.id} className="card">
-                    <h2>{post.title}</h2>
+                    <Link to={`${post.id}`}>
+                        <h2>{post.title}</h2>
+                    </Link>
                     <h3>{post.topic.name}</h3>
                     <p>{post.likeCount} likes</p>
                 </div>
+             </>    
             )}
             </div>
             </div>

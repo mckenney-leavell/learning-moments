@@ -1,13 +1,25 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import { AllPosts } from "./components/AllPosts"
-import { DropDown } from "./components/DropDown"
+import { Route, Routes } from "react-router-dom"
+import { Register } from "./components/auth/Register"
+import { Authorized } from "./views/Authorized"
+import { ApplicationViews } from "./views/ApplicationViews"
+import { Login } from "./components/auth/Login"
 
 
 export const App = () => {
   return (
-    <div>
-      {/* <DropDown /> */}
-      <AllPosts />
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      <Route 
+        path="*" 
+        element={
+          <Authorized>
+            <ApplicationViews />
+          </Authorized>
+        }
+      />
+    </Routes>
   )
 }

@@ -17,12 +17,6 @@ export const SearchBar = ( {setSearchInput, getSearchInput} ) => {
             setSearchInput(event.target.value)
         }}
         />
-        {/* <button 
-        className="search-button"
-        // onClick={
-        //     setButtonStatus(true)
-        // }
-        >Search</button> */}
         </div>
     )
 }
