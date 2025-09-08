@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import { DropDown } from "./DropDown";
 import { SearchBar } from "./SearchBar";
 import { Link } from "react-router-dom";
+import { Post } from "./Post";
+import { CreatePost } from "./CreatePost";
 
-export const AllPosts = () => {
+export const AllPosts = ({ currentUser }) => {
     const [allPosts, setAllPosts] = useState([])
     // const [allTopics, setTopics] = useState([])
     const [getSelectedTopic, setSelectedTopic] = useState([])
@@ -30,24 +32,22 @@ export const AllPosts = () => {
             setFilteredPosts(allPosts)
         }
     }, [allPosts, getSelectedTopic, getSearchInput])
+
+    const getAndSetPosts = () => {
+        getAllPosts().then((postsArray) => {
+            setAllPosts(postsArray)
+        })
+    }
     
     return (
         <div>
             <SearchBar setSearchInput={setSearchInput} getSearchInput={getSearchInput} />
             <DropDown setShowFilteredTopic={setSelectedTopic} />
-            <div className="allPosts">
-            {showFilteredPosts.map((post) =>
-            <>       
-                <div key={post.id} className="card">
-                    <Link to={`${post.id}`}>
-                        <h2>{post.title}</h2>
-                    </Link>
-                    <h3>{post.topic.name}</h3>
-                    <p>{post.likeCount} likes</p>
-                </div>
-             </>    
-            )}
-            </div>
+            <article className="allPosts">
+            {showFilteredPosts.map((post) => {  
+                return <Post key={post.id} post={post} currentUser={currentUser} getAndSetPosts={getAndSetPosts} setAllPosts={setAllPosts}/>
+            })}
+            </article>
             </div>
     )
 }

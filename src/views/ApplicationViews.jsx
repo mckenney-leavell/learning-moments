@@ -3,6 +3,7 @@ import { AllPosts } from "../components/AllPosts"
 import { NavBar } from "../components/nav/NavBar"
 import { useEffect, useState } from "react"
 import { PostDetails } from "../components/PostDetails"
+import { CreatePost } from "../components/CreatePost"
 
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({})
@@ -22,10 +23,11 @@ export const ApplicationViews = () => {
                 </>
             }>
                 <Route index element={<AllPosts />}/>
-                {/* <Route path="posts">
-                    <Route index element={<AllPosts />}/> */}
-                    <Route path=":postId" element={<PostDetails />} />
-                {/* </Route> */}
+                <Route path="posts">
+                    <Route index element={<AllPosts currentUser={currentUser}/>}/>
+                    <Route path=":postId" element={<PostDetails currentUser={currentUser}/>} />
+                </Route>
+                <Route path="create-post" element={<CreatePost currentUser={currentUser}/>}/>
             </Route>
         </Routes>
     )

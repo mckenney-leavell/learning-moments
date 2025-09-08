@@ -1,0 +1,161 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@email.com",
+      "cohort": 78
+    },
+    {
+      "id": 2,
+      "name": "Mike Chen",
+      "email": "mike.chen@email.com",
+      "cohort": 78
+    },
+    {
+      "id": 3,
+      "name": "Emma Rodriguez",
+      "email": "emma.rodriguez@email.com",
+      "cohort": 70
+    },
+    {
+      "id": 4,
+      "name": "Alex Thompson",
+      "email": "alex.thompson@email.com",
+      "cohort": 77
+    },
+    {
+      "id": 5,
+      "name": "Jordan Kim",
+      "email": "jordan.kim@email.com",
+      "cohort": 78
+    },
+    {
+      "email": "fake.email@email.com",
+      "fullName": "Mars",
+      "cohort": 77,
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "My First HTML Page",
+      "body": "Just created my first HTML page! It's simple but I'm proud of the structure I built with semantic elements.",
+      "postDate": "2024-03-15",
+      "userId": 5,
+      "likeCount": 14,
+      "topicId": 3
+    },
+    {
+      "id": 2,
+      "title": "CSS Flexbox is Amazing",
+      "body": "Finally understood flexbox today. The way it handles layout is so much easier than what I expected!",
+      "postDate": "2024-03-18",
+      "userId": 3,
+      "likeCount": 13,
+      "topicId": 1,
+      "user": {
+        "id": 3,
+        "name": "Emma Rodriguez",
+        "email": "emma.rodriguez@email.com",
+        "cohort": 70
+      },
+      "topic": {
+        "id": 1,
+        "name": "HTML Fundamentals"
+      }
+    },
+    {
+      "id": 3,
+      "title": "JavaScript Variables Confusion",
+      "body": "Can someone explain the difference between let, const, and var? I keep mixing them up in my code.",
+      "postDate": "2024-03-20",
+      "userId": 2,
+      "likeCount": 15,
+      "topicId": 4
+    },
+    {
+      "id": 4,
+      "title": "Building My First React Component",
+      "body": "Created a simple button component today. The component-based thinking is starting to click!",
+      "postDate": "2024-03-22",
+      "userId": 1,
+      "likeCount": 20,
+      "topicId": 2
+    },
+    {
+      "id": 5,
+      "title": "HTML Forms Best Practices",
+      "body": "Learned about proper form validation and accessibility features. Labels are more important than I thought!",
+      "postDate": "2024-03-25",
+      "userId": 4,
+      "likeCount": 10,
+      "topicId": 1,
+      "user": {
+        "id": 4,
+        "name": "Alex Thompson",
+        "email": "alex.thompson@email.com",
+        "cohort": 77
+      },
+      "topic": {
+        "id": 1,
+        "name": "HTML Fundamentals"
+      }
+    },
+    {
+      "id": 6,
+      "title": "CSS Grid vs Flexbox",
+      "body": "When should I use Grid instead of Flexbox? Both seem to solve similar layout problems.",
+      "postDate": "2024-03-28",
+      "userId": 1,
+      "likeCount": 20,
+      "topicId": 2
+    },
+    {
+      "id": 7,
+      "title": "JavaScript Arrays and Loops",
+      "body": "Practicing with for loops and array methods. The forEach method is becoming my favorite!",
+      "postDate": "2024-03-30",
+      "userId": 2,
+      "likeCount": 11,
+      "topicId": 3
+    },
+    {
+      "id": 8,
+      "title": "React State Management Help",
+      "body": "useState is confusing me. How do I update state properly without causing infinite re-renders?",
+      "postDate": "2024-04-02",
+      "userId": 3,
+      "likeCount": 26,
+      "topicId": 4
+    },
+    {
+      "title": "title",
+      "body": "description",
+      "postDate": "2025-09-08T18:30:55.858Z",
+      "userId": 2,
+      "likeCount": 0,
+      "topicId": 2,
+      "id": 9
+    }
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "name": "HTML Fundamentals"
+    },
+    {
+      "id": 2,
+      "name": "CSS Styling"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript Basics"
+    },
+    {
+      "id": 4,
+      "name": "React Introduction"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { getAllTopics } from "../services/TopicsService"
 // import bootstrap from 'bootstrap'
 // import { getAllPosts } from "../services/AllPostsService"
 
@@ -7,7 +8,8 @@ export const DropDown = ( { setShowFilteredTopic } ) => {
     // const [showSelectedTopicOnly, setSelectedTopic] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:8088/topics").then((res) => res.json()).then((topicsArr) => {
+        const allTopicsService = getAllTopics()
+        allTopicsService.then((topicsArr) => {
             setTopics(topicsArr)
         })
     }, [])
